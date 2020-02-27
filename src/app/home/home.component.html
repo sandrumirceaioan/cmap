@@ -1,0 +1,115 @@
+<div class="container-fluid">
+    <div class="container main-banner">
+        <div class="row">
+            <div class="col-md-7 hidden-md text-right">
+                <h1>Casino Best Offers</h1>
+                <p>get best online casino bonuses and offers</p>
+            </div>
+            <div class="col-md-5 col-12">
+                <button mdbBtn type="button" class="btn-lg btn-offer text-white gold-gradient-inverse"
+                    mdbWavesEffect>Get
+                    Bonus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-7 col-md-4">
+            <div class="row">
+                <div class="col-12 section-title">
+                    <h2>
+                        <mdb-icon fas icon="crown" class="icon-green"></mdb-icon> New Casinos
+                    </h2>
+                    <button mdbBtn type="button" class="float-right btn-sm btn-flat" outline="true" mdbWavesEffect>View
+                        All
+                        Casinos</button>
+                </div>
+            </div>
+            <div class="row custom-card-group">
+                <div class="col-lg-4 col-md-6" *ngFor="let casino of casinos">
+                    <div class="card custom-card">
+                        <div class="custom-card-head">
+                            <h3 class="card-title custom-card-title">{{casino.casinoName}}</h3>
+                        </div>
+                        <div [style.background-color]="casino.casinoLogoBg">
+                            <a [routerLink]="['casinos', casino.casinoUrl]"><img
+                                    [src]="casinosService.backendPath + casino.casinoLogo" class="custom-card-image"
+                                    alt="casino.casinoName"></a>
+                        </div>
+                        <div class="custom-card-footer">
+                            <div class="row no-gutters">
+                                <div class="col-12 reputation">
+                                    <div class="rating">
+                                        <span class="score">{{casino.casinoScore}}</span>
+                                        <span class="max">/10</span>
+                                    </div>
+                                    <!-- <span class="max">Reputation</span> -->
+                                    <span class="card-text rank"> <mdb-icon fas icon="medal" class="icon"></mdb-icon>{{casino.casinoReputation}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-card-body">
+                            <a [routerLink]="['casinos', casino.casinoUrl]" mdbBtn class="btn btn-block text-white gold-gradient-inverse custom-card-button"
+                                mdbWavesEffect>Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-md-5">
+            <div class="col-12 pr-0">
+                <div class="row">
+                    <div class="col-12 section-title">
+                        <h2>
+                            <mdb-icon fas icon="gift" class="icon-gold"></mdb-icon> Best Bonuses
+                        </h2>
+                        <button mdbBtn type="button" class="float-right btn-sm btn-flat" outline="true"
+                            mdbWavesEffect>View
+                            All
+                            Bonuses</button>
+                    </div>
+                </div>
+                <div class="row custom-card-group">
+                    <div class="col-lg-4 col-md-6" *ngFor="let casino of casinos">
+                        <div class="card custom-card">
+                            <div [style.background-color]="casino.casinoLogoBg">
+                                <a [routerLink]="['online-casino', casino.casinoUrl]"><img
+                                        [src]="casinosService.backendPath + casino.casinoLogo" class="custom-card-image"
+                                        alt="casino.casinoName"></a>
+                            </div>
+                            <div class="custom-card-body">
+                                <h4 class="card-title custom-card-title">{{casino.casinoName}}</h4>
+                                <div class="rating">
+                                    <span class="max">Score </span>
+                                    <span class="score">{{casino.casinoScore}}</span>
+                                    <span class="max">/10</span>
+                                </div>
+                                <a mdbBtn class="btn btn-block text-white gold-gradient-inverse custom-card-button"
+                                    mdbWavesEffect>Play</a>
+                            </div>
+
+                            <div class="custom-card-footer">
+                                <div class="row no-gutters">
+                                    <div class="col-12 reputation">
+                                        <mdb-icon fas icon="medal" class="icon"></mdb-icon>
+                                        <span class="card-text rank">{{casino.casinoReputation}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+
+
+</div>

@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 section-title">
+                <h2>
+                    <mdb-icon fas icon="crown" class="icon"></mdb-icon> All SLOTS
+                </h2>
+                <button mdbBtn type="button" class="float-right btn-sm btn-flat" outline="true" mdbWavesEffect>View All
+                    Slots</button>
+            </div>
+        </div>
+
+        <div class="row custom-card-group">
+            <div class="col-lg-3 col-md-3" *ngFor="let slot of slots">
+                <div class="card">
+                    <img [src]="slotsService.backendPath + slot.slotLogo">
+                    <h4>{{slot.slotName}}</h4>
+                    <p>{{slot.slotUrlDetails}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

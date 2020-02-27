@@ -1,0 +1,18 @@
+.content {
+    position: relative;
+    padding-top: calc(3rem + 30px);
+    padding-bottom: 3rem;
+  }
+  
+  .overlay {
+    position: absolute;
+    background: #000000;
+    opacity: 0.5;
+    top: -15px;
+    left: 0px;
+    right: 0px;
+    bottom: -15px;
+    width: 100%;
+    height: calc(100% + 15px);
+    z-index: 7999;
+  }

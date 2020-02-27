@@ -1,0 +1,409 @@
+<div class="container">
+
+    <div class="row" id="overview">
+
+        <!-- header -->
+        <div class="col-md-8 profile-head">
+            <div class="card profile-card" [class.extra-margin]="sticky" [style.border-color]="casino.casinoThemeColor">
+                <div class="profile-card-header">
+                    <h1 [style.color]="casino.casinoThemeColor">{{casino.casinoName}}</h1>
+                </div>
+                <div class="profile-card-body">
+                    <p [innerHTML]="casino.casinoDescription"></p>
+                </div>
+                <div class="row profile-card-footer">
+                    <div class="col-4 text-right">
+                        <div class="profile-image" [style.border-color]="casino.casinoThemeColor">
+                            <img [src]="casinosService.backendPath + casino.casinoLogo" class="custom-card-image"
+                                alt="casino.casinoName">
+                        </div>
+                    </div>
+                    <div class="profile-actions col-8">
+                        <div class="col-12 buttons text-right">
+                            <a mdbBtn class="green-gradient"
+                                mdbWavesEffect><strong>Play</strong></a>
+                            <a mdbBtn [style.background]="casino.casinoThemeColor"
+                                mdbWavesEffect><strong>Bonuses</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- rating -->
+            <div class="rating" #stickyMenu>
+                <div class="row" *ngIf="!sticky">
+                    <div class="col-3 score">
+                        <small>score</small><br />
+                        <span [ngClass]="ratingClass">{{casino.casinoScore | number:'1.1-1'}}</span>
+                    </div>
+                    <div class="col-4 stars">
+                        <div class="reputation">
+                            <small>reputation</small><br />
+                            <span [ngClass]="ratingClass">{{casino.casinoReputation}}</span>
+                        </div>
+                        <ngx-star-rating [(rating)]="casino.casinoScore" [total]="10" [filledColor]="'#ffa500'"
+                            [emptyColor]="'#d4d4d4'" [readonly]="true" [type]="'hollow'">
+                        </ngx-star-rating> <!-- (rated)="rateEvent($event)" -->
+                        <!-- <star-rating [value]="casino.casinoScore" [(ngModel)]="casino.casinoScore" totalstars="10" checkedcolor="orange" uncheckedcolor="gray" size="24" readonly="true"></star-rating> -->
+                    </div>
+                    <div class="col-5 links">
+                        <ul>
+                            <li><a [ngx-scroll-to]="'#overview'" [ngx-scroll-to-offset]="-100">Overview</a></li>
+                            <li><a [ngx-scroll-to]="'#details'" [ngx-scroll-to-offset]="0">Details</a></li>
+                            <li><a [ngx-scroll-to]="'#bonuses'">Bonuses</a></li>
+                            <li><a [ngx-scroll-to]="'#reviews'">Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sticky" *ngIf="sticky">
+                    <div class="container" [style.border-color]="casino.casinoThemeColor">
+                        <div class="row">
+                            <div class="col-12">
+                                <img [src]="casinosService.backendPath + casino.casinoLogo" class="logo"
+                                    alt="casino.casinoName">
+                                <div class="score">
+                                    <small>score</small><br />
+                                    <span [ngClass]="ratingClass">{{casino.casinoScore | number:'1.1-1'}}</span>
+                                </div>
+                                <div class="reputation">
+                                    <small>reputation</small><br />
+                                    <span [ngClass]="ratingClass">{{casino.casinoReputation}}</span>
+                                </div>
+                                <div class="stars">
+                                    <ngx-star-rating [(rating)]="casino.casinoScore" [total]="10"
+                                        [filledColor]="'#ffa500'" [emptyColor]="'#d4d4d4'" [readonly]="true"
+                                        [type]="'hollow'">
+                                    </ngx-star-rating>
+                                </div>
+
+                                <div class="links">
+                                    <ul>
+                                        <li><a [ngx-scroll-to]="'#overview'" [ngx-scroll-to-offset]="-100">Overview</a>
+                                        </li>
+                                        <li><a [ngx-scroll-to]="'#details'" [ngx-scroll-to-offset]="0">Details</a></li>
+                                        <li><a [ngx-scroll-to]="'#bonuses'">Bonuses</a></li>
+                                        <li><a [ngx-scroll-to]="'#reviews'">Reviews</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- specs -->
+            <div class="col-md-12 specs">
+                <div class="sub-section-title">
+                    <h3>Pros and Cons</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 positives p-0">
+                        <ul>
+                            <li *ngFor="let positive of casino.casinoSpecs.positives">
+                                <div class="row">
+                                    <div class="col-2 item">
+                                        <mdb-icon fas icon="plus" class="icon"></mdb-icon>
+                                    </div>
+                                    <div class="col-10">
+                                        {{positive}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 negatives p-0">
+                        <ul>
+                            <li *ngFor="let negative of casino.casinoSpecs.negatives">
+                                <div class="row">
+                                    <div class="col-2 item">
+                                        <mdb-icon fas icon="minus" class="icon"></mdb-icon>
+                                    </div>
+                                    <div class="col-10">
+                                        {{negative}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- review -->
+            <div class="col-md-12 review" *ngIf="casino.casinoFullDescription">
+                <div class="sub-section-title">
+                    <h3>{{casino.casinoName}} Review</h3>
+                </div>
+                <div class="row description">
+                    <div *ngIf="!expanded" class="overlay"></div>
+                    <div class="col-12 full-description" [class.partial]="!expanded"
+                        [innerHTML]="casino.casinoFullDescription">
+                    </div>
+                    <button mdbBtn type="button" [style.background]="casino.casinoThemeColor"
+                        class="more text-white float-right btn-sm btn-flat" (click)="expanded = !expanded"
+                        mdbWavesEffect>
+                        <span *ngIf="!expanded">view more</span>
+                        <span *ngIf="expanded">view less</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- details -->
+            <div class="col-md-12 details" id="details">
+                <div class="sub-section-title">
+                    <h3>Details</h3>
+                </div>
+                <div class="row details-list">
+                    <div class="col-md-6">
+                        <ul>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="star" class="label-icon"></mdb-icon> Rating
+                                </div>
+                                <div class="col-6 info">
+                                    <span class="info-reputation"
+                                        [ngClass]="ratingClass">{{casino.casinoReputation}}</span> (<small
+                                        class="info-score">{{casino.casinoScore}}</small>)
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="shield-alt" class="label-icon"></mdb-icon> Owner
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoOwner}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="globe-americas" class="label-icon"></mdb-icon> Website
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoWebsiteUrl}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="play-circle" class="label-icon"></mdb-icon> Type
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link" *ngFor="let badge of casino.casinoType">{{badge}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="percentage" class="label-icon"></mdb-icon> RTP
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoRtp}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="calendar-alt" class="label-icon"></mdb-icon> Launched
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoEstablished}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="id-card" class="label-icon"></mdb-icon> Licensed
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link"
+                                        *ngFor="let license of casino.casinoLicensingAuthorities">{{license}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="address-book" class="label-icon"></mdb-icon> Contact
+                                </div>
+                                <div class="col-6 info">
+                                    <div class="info-email">
+                                        <small *ngIf="casino.casinoContact.email">
+                                            <mdb-icon fas icon="envelope" class="info-icon"></mdb-icon>
+                                        </small> <a *ngIf="casino.casinoContact.email"
+                                            class="details-link-nb">{{casino.casinoContact.email}}</a>
+                                    </div>
+                                    <div class="info-phone">
+                                        <small *ngIf="casino.casinoContact.phone">
+                                            <mdb-icon fas icon="phone" class="info-icon"></mdb-icon>
+                                        </small> <a *ngIf="casino.casinoContact.phone" class="details-link-nb">
+                                            {{casino.casinoContact.phone}}</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="headset" class="label-icon"></mdb-icon> Live chat
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoLiveChat}}</a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 label">
+                                    <mdb-icon fas icon="users" class="label-icon"></mdb-icon> Affiliate program
+                                </div>
+                                <div class="col-6 info">
+                                    <a class="details-link">{{casino.casinoAffiliateProgram.name}}</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-12 pr-0">
+                            <ul>
+                                <li class="row">
+                                    <div class="col-5 label">
+                                        <mdb-icon fas icon="hand-holding-usd" class="label-icon"></mdb-icon> Withdrawal
+                                        Limit
+                                    </div>
+                                    <div class="col-7 info">
+                                        <a class="details-link">{{casino.casinoWithdrawalLimit}}</a>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-5 label">
+                                        <mdb-icon fas icon="clock" class="label-icon"></mdb-icon> Withdrawal Duration
+                                    </div>
+                                    <div class="col-7 info">
+                                        <div class="row" *ngFor="let wt of casino.casinoWithdrawalTimes">
+                                            <div class="col-6">
+                                                <small>{{wt.type}}</small>
+                                            </div>
+                                            <div class="col-6">
+                                                <a class="details-link">{{wt.duration}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-5 label">
+                                        <mdb-icon fas icon="language" class="label-icon"></mdb-icon> Languages
+                                    </div>
+                                    <div class="col-7 info">
+                                        <a class="details-link"
+                                            *ngFor="let language of casino.casinoLanguages">{{language}}</a>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-5 label">
+                                        <mdb-icon far icon="money-bill-alt" class="label-icon"></mdb-icon> Currencies
+                                    </div>
+                                    <div class="col-7 info">
+                                        <a class="details-link"
+                                            *ngFor="let currency of casino.casinoCurrencies">{{currency}}</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <ul>
+                            <li class="row">
+                                <div class="col-3 label">
+                                    <mdb-icon fas icon="credit-card" class="label-icon"></mdb-icon> Deposit
+                                </div>
+
+                                <div class="col-9 info">
+                                    <a class="details-link"
+                                        *ngFor="let deposit of casino.casinoDepositMethods">{{deposit.name}}
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-3 label">
+                                    <mdb-icon far icon="credit-card" class="label-icon"></mdb-icon> Withdrawal
+                                </div>
+
+                                <div class="col-9 info">
+                                    <a class="details-link"
+                                        *ngFor="let withdrawal of casino.casinoWithdrawalMethods">{{withdrawal.name}}
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-3 label">
+                                    <mdb-icon fas icon="ban" class="label-icon"></mdb-icon> Restricted
+                                </div>
+
+                                <div class="col-9 info">
+                                    <a class="details-link"
+                                        *ngFor="let country of casino.casinoRestrictedCountries">{{country.name}}
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- sidebar -->
+        <div class="col-md-4">
+            <div class="col-12 sidebar-section pr-0">
+                <div class="row">
+                    <div class="col-12 section-title">
+                        <h2>
+                            <mdb-icon fas icon="award" class="sidebar-title-icon"
+                                [style.color]="casino.casinoThemeColor"></mdb-icon> Best Offer
+                        </h2>
+                    </div>
+                    <div class="col-12 section-content">
+                        <p>No offers available yet.</p>
+                        <!-- <div *ngIf="bestBonus">{{bestBonus | json}}</div> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- providers -->
+            <div class="col-12 sidebar-section pr-0 my-3" id="providers">
+                <div class="row">
+                    <div class="col-12 section-title">
+                        <h2>
+                            <mdb-icon fas icon="laptop-code" class="sidebar-title-icon"
+                                [style.color]="casino.casinoThemeColor"></mdb-icon> Software Providers
+                        </h2>
+                    </div>
+                    <div class="col-12 section-content providers-list">
+                        <ul>
+                            <li *ngFor="let provider of casino.casinoSoftwareProviders">
+                                <div class="col-12 logo">
+                                    <img [src]="casinosService.backendPath + provider.logo" class="provider-logo"
+                                        [alt]="provider.name + ' - slot games provider'">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="row">
+
+      
+        <div class="col-md-8 main-content">
+            <div class="row">
+                <div class="col-md-3 score">
+                    {{casino.casinoScore}}
+                </div>
+                <div class="col-md-4">
+                    <star-rating value="5" totalstars="10" size="24px" readonly="false" (rate)="onRate($event)">
+                    </star-rating>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            sidebar
+        </div>
+    </div> -->
+
+</div>

@@ -1,0 +1,103 @@
+<div class="container-fluid nav-container bg-black">
+  <div class="container mobile">
+    <div class="row">
+      <!-- logo -->
+      <div class="col-7 logo">
+        <a routerLink="/">
+          <img src="./assets/images/logo-cbo-final21.png" alt="Casino Best Offer">
+        </a>
+      </div>
+
+      <!-- mobile menu -->
+      <div class="col-5">
+        <div id="nav-icon1" class="float-right" (click)="openMenu()" [class.open]="globalService.mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slide" [class.open-menu]="globalService.mobileMenuToggle">
+      <ul class="parent">
+        <li *ngFor="let item of menuItems">
+          <a (click)="select(item)" [ngClass]="{active: isActive(item)}">{{item.title}}</a>
+          <ul class="child">
+            <li class="back">
+              <a (click)="select(null)">
+                <mdb-icon fas icon="arrow-left"></mdb-icon> <span> {{item.title}}</span>
+              </a>
+            </li>
+            <li *ngFor="let child of item.subItems">
+              <a>{{child.title}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container h-100 text-white desktop">
+    <div class="row align-items-center h-100">
+
+      <!-- logo -->
+      <div class="col-lg-3 logo">
+        <a routerLink="/">
+          <img src="./assets/images/logo-cbo-final21.png" alt="Casino Best Offer">
+        </a>
+      </div>
+
+      <!-- main menu -->
+      <div class="col-lg-6">
+        <ul class="menu">
+          <li class="menu-item" [routerLinkActive]="'is-active'">
+            <a class="menu-link" [routerLink]="['/casinos']">Casinos</a>
+            <ul class="sub-menu">
+              <li [routerLinkActive]="'sub-active'"><a [routerLink]="['/casinos/all']">All Casinos</a></li>
+              <li [routerLinkActive]="'sub-active'"><a [routerLink]="['/casinos/new']">New Casinos</a></li>
+              <li [routerLinkActive]="'sub-active'"><a [routerLink]="['/casinos/best']">Best Casinos</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="#">Bonuses</a>
+            <ul class="sub-menu">
+              <li><a>Casino Bonuses</a></li>
+              <li><a>Welcome Bonuses</a></li>
+              <li><a>Deposit Bonuses</a></li>
+              <li><a>Exclusive Bonuses</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="#">Slots</a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="#">Affiliates</a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="#">News</a>
+          </li>
+          <li class="menu-item" [routerLinkActive]="'is-active'">
+            <a class="menu-link" [routerLink]="['/about']">About</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- actions -->
+      <div class="col-lg-3 smember-buttons">
+        <div class="row">
+          <div class="ml-auto">
+            <button mdbBtn class="btn search-btn" type="button" mdbWavesEffect>
+              <mdb-icon fas icon="search"></mdb-icon>
+            </button>
+            <button mdbBtn size="sm" class="text-white gold-gradient-inverse" mdbWavesEffect><strong>Sign
+                in</strong></button>
+            <button mdbBtn size="sm" class="text-white gold-gradient-inverse" mdbWavesEffect><strong>Register</strong></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

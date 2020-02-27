@@ -1,0 +1,7 @@
+<!-- main layout -->
+<app-navigation></app-navigation>
+<div class="content">
+  <div *ngIf="globalService.mobileMenuToggle" (click)="closeMenu()" class="overlay"></div>
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

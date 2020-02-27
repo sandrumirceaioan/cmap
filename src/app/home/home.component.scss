@@ -1,0 +1,163 @@
+.main-banner {
+    background: url('/assets/images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 60px;
+    color: #efefef;
+    margin-bottom:15px;
+}
+
+.main-banner h1 {
+    font-weight: bold;
+}
+
+.btn-offer {
+    margin: 12px 10px;
+}
+.section-title {
+    color: #000000;
+    background: #ffffff;
+    padding: 10px 15px 10px 30px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.section-title .icon-gold {
+display: block;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 19px;
+    float: left;
+    padding: 5px 5px 5px 6px;
+    margin: 5px 10px 0 -10px;
+    background: linear-gradient(35deg, #c78725 0%, #e2b836 50%, #c78725 100%);
+    border-radius: 100px;
+}
+
+.section-title .icon-green {
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 17px;
+    float: left;
+    padding: 6px 4px 6px 5px;
+    margin: 5px 10px 0 -10px;
+    background: linear-gradient(35deg, #c78725 0%, #e2b836 50%, #c78725 100%);
+    border-radius: 100px;
+}
+
+
+.section-title h2 {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 300;
+    float:left;
+}
+
+.section-title button {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 5px 0px;
+
+}
+.custom-card-group {
+    background: #ffffff;
+    padding: 15px 0;
+}
+
+.custom-card {
+    border: none;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 5px 0px #bebebe;
+}
+
+.custom-card-head {
+    display: block;
+    padding: 10px 10px 0 10px;
+}
+
+.custom-card-body {
+    padding: 0px;
+}
+
+.custom-card-head h3 {
+    font-size: 23px;
+    font-weight: 300;
+    color: #6f6f6f;
+}
+
+.custom-card-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.custom-card-image {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.custom-card-footer {
+    margin: 0px;
+    padding: 0px;
+}
+
+.rating {
+    float: right;
+}
+
+.rating .score {
+    font-size: 15px;
+    font-weight: 800;
+    color: #d6a32f;
+    line-height: 10px;
+    padding-right: 2px;
+}
+
+.rating .max, .max {
+    font-size: 12px;
+    /* font-weight: bold; */
+    color: #585858;
+    font-weight: 500;
+}
+
+.custom-card-button {
+    font-family: arial;
+    text-shadow: none;
+    font-weight: 400;
+    padding: 10px 30px;
+    border-radius: 0px !important;
+}
+
+.gold-gradient-inverse {
+    background: linear-gradient(35deg, #f3c755 0%, #cb8e28 50%, #f3c755 100%);
+  }
+
+.custom-card-footer .reputation {
+    border-top: 1px solid #e8e8e8;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #000000;
+}
+
+.reputation .icon {
+    color: #d6a32f;
+    padding-right: 5px;
+    font-size: 17px;
+}
+
+.reputation .rank {
+    display: block;
+    float: left;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 300;
+    color: #585858;
+}
