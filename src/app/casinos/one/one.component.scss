@@ -348,6 +348,35 @@
         border-bottom: 1px solid #e8e8e8;
     }
 
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(177, 177, 177);
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(156, 156, 156);
+  cursor: pointer;
+}
+
+
+    .providers-list {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
     .providers-list ul {
         list-style: none;
         margin:0px;
@@ -355,9 +384,8 @@
     }
 
     .providers-list ul li {
-        display: inline-block;
+        display: block;
         margin-bottom: 10px;
-        margin-right: 10px;
         padding: 0px 0px;
     }
 

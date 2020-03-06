@@ -169,7 +169,7 @@
                                     <mdb-icon fas icon="shield-alt" class="label-icon"></mdb-icon> Owner
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoOwner}}</a>
+                                    <span class="details-link">{{casino.casinoOwner}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -177,7 +177,7 @@
                                     <mdb-icon fas icon="globe-americas" class="label-icon"></mdb-icon> Website
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoWebsiteUrl}}</a>
+                                    <span class="details-link">{{casino.casinoWebsiteUrl}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -185,7 +185,7 @@
                                     <mdb-icon fas icon="play-circle" class="label-icon"></mdb-icon> Type
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link" *ngFor="let badge of casino.casinoType">{{badge}}</a>
+                                    <span class="details-link" *ngFor="let badge of casino.casinoType">{{badge}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -193,7 +193,7 @@
                                     <mdb-icon fas icon="percentage" class="label-icon"></mdb-icon> RTP
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoRtp}}</a>
+                                    <span class="details-link">{{casino.casinoRtp}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -201,7 +201,7 @@
                                     <mdb-icon fas icon="calendar-alt" class="label-icon"></mdb-icon> Launched
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoEstablished}}</a>
+                                    <span class="details-link">{{casino.casinoEstablished}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -209,8 +209,8 @@
                                     <mdb-icon fas icon="id-card" class="label-icon"></mdb-icon> Licensed
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link"
-                                        *ngFor="let license of casino.casinoLicensingAuthorities">{{license}}</a>
+                                    <span class="details-link"
+                                        *ngFor="let license of casino.casinoLicensingAuthorities">{{license}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -237,7 +237,7 @@
                                     <mdb-icon fas icon="headset" class="label-icon"></mdb-icon> Live chat
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoLiveChat}}</a>
+                                    <span class="details-link">{{casino.casinoLiveChat}}</span>
                                 </div>
                             </li>
                             <li class="row">
@@ -245,7 +245,7 @@
                                     <mdb-icon fas icon="users" class="label-icon"></mdb-icon> Affiliate program
                                 </div>
                                 <div class="col-6 info">
-                                    <a class="details-link">{{casino.casinoAffiliateProgram.name}}</a>
+                                    <span class="details-link">{{casino.casinoAffiliateProgram.name}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -259,7 +259,7 @@
                                         Limit
                                     </div>
                                     <div class="col-7 info">
-                                        <a class="details-link">{{casino.casinoWithdrawalLimit}}</a>
+                                        <span class="details-link">{{casino.casinoWithdrawalLimit}}</span>
                                     </div>
                                 </li>
                                 <li class="row">
@@ -272,7 +272,7 @@
                                                 <small>{{wt.type}}</small>
                                             </div>
                                             <div class="col-6">
-                                                <a class="details-link">{{wt.duration}}</a>
+                                                <span class="details-link">{{wt.duration}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -282,8 +282,8 @@
                                         <mdb-icon fas icon="language" class="label-icon"></mdb-icon> Languages
                                     </div>
                                     <div class="col-7 info">
-                                        <a class="details-link"
-                                            *ngFor="let language of casino.casinoLanguages">{{language}}</a>
+                                        <span class="details-link"
+                                            *ngFor="let language of casino.casinoLanguages">{{language}}</span>
                                     </div>
                                 </li>
                                 <li class="row">
@@ -291,8 +291,8 @@
                                         <mdb-icon far icon="money-bill-alt" class="label-icon"></mdb-icon> Currencies
                                     </div>
                                     <div class="col-7 info">
-                                        <a class="details-link"
-                                            *ngFor="let currency of casino.casinoCurrencies">{{currency}}</a>
+                                        <span class="details-link"
+                                            *ngFor="let currency of casino.casinoCurrencies">{{currency}}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -307,9 +307,9 @@
                                 </div>
 
                                 <div class="col-9 info">
-                                    <a class="details-link"
+                                    <span class="details-link"
                                         *ngFor="let deposit of casino.casinoDepositMethods">{{deposit.name}}
-                                    </a>
+                                    </span>
                                 </div>
                             </li>
                             <li class="row">
@@ -318,9 +318,9 @@
                                 </div>
 
                                 <div class="col-9 info">
-                                    <a class="details-link"
+                                    <span class="details-link"
                                         *ngFor="let withdrawal of casino.casinoWithdrawalMethods">{{withdrawal.name}}
-                                    </a>
+                                    </span>
                                 </div>
                             </li>
                             <li class="row">
@@ -329,9 +329,9 @@
                                 </div>
 
                                 <div class="col-9 info">
-                                    <a class="details-link"
+                                    <span class="details-link"
                                         *ngFor="let country of casino.casinoRestrictedCountries">{{country.name}}
-                                    </a>
+                                    </span>
                                 </div>
                             </li>
                         </ul>
@@ -370,8 +370,8 @@
                         </h2>
                     </div>
                     <div class="col-12 section-content providers-list">
-                        <ul>
-                            <li *ngFor="let provider of casino.casinoSoftwareProviders">
+                        <ul class="row">
+                            <li *ngFor="let provider of casino.casinoSoftwareProviders" class="col-6">
                                 <div class="col-12 logo">
                                     <img [src]="casinosService.backendPath + provider.logo" class="provider-logo"
                                         [alt]="provider.name + ' - slot games provider'">
