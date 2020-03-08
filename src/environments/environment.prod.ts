@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  backend: 'http://localhost:3000/',
-  apiEndpoint: 'http://localhost:3000/api'
+  backend: 'https://api.casinobestoffer.com/',
+  apiEndpoint: 'https://api.casinobestoffer.com/api'
 };
