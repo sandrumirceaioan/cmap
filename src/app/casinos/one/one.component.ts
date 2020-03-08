@@ -25,11 +25,12 @@ export class OneCasinoComponent implements OnInit {
     public casinosService: CasinosService,
     public bonusesService: BonusesService,
     public seoService: SeoService
-  ) { }
-
-  ngOnInit() {
+  ) {
     this.data = this.route.snapshot.data['resolved'];
     this.seoService.seo(this.data.casino.casinoName + ' - Bonuses, Games, Review', this.data.casino.casinoMetaDescription);
+   }
+
+  ngOnInit() {
     this.casino = this.data.casino;
     this.bonusesService.getCasinoBestBonus(this.casino._id).subscribe(
       (result) => {
