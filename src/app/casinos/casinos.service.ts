@@ -45,4 +45,16 @@ export class CasinosService {
           );
     }
 
+    getCasinoTerms(url): Observable<any> {
+        return this.http.get(
+            this.apiPath + '/casinos/terms/' + url, httpOptions).pipe(
+                map((result: any) => {
+                    return result;
+                }),
+                catchError((error) => {
+                    return throwError(error.message);
+                })
+            );
+    }
+
 }

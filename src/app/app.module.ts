@@ -15,6 +15,7 @@ import { HomeResolve } from './home/home.resolve';
 import { SlotsResolve } from './slots/slots.resolve';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
     FooterComponent,
     EscapeHtmlPipe,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

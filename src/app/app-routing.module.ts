@@ -4,6 +4,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { HomeComponent } from './home/home.component';
 import { HomeResolve } from './home/home.resolve';
 import { AboutComponent } from './about/about.component';
+import { TermsComponent } from './terms/terms.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./casinos/casinos.module').then(m => m.CasinosModule)
   },
   { path: 'about', component: AboutComponent },
+  { path: 'terms-and-conditions', component: TermsComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' }
 ];

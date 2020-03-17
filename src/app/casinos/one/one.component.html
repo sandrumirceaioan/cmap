@@ -20,10 +20,16 @@
                     </div>
                     <div class="profile-actions col-8">
                         <div class="col-12 buttons text-right">
-                            <a mdbBtn class="green-gradient"
-                                mdbWavesEffect><strong>Play</strong></a>
-                            <a mdbBtn [style.background]="casino.casinoThemeColor"
-                                mdbWavesEffect><strong>Bonuses</strong></a>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button mdbBtn (click)="goToTerms(casino.casinoUrl)" color="link">Terms & Conditions</button>
+                                </div>
+                                <div class="col-12">
+                                    <a mdbBtn class="green-gradient" mdbWavesEffect><strong>Play</strong></a>
+                                    <a mdbBtn [style.background]="casino.casinoThemeColor"
+                                        mdbWavesEffect><strong>Bonuses</strong></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -353,6 +359,9 @@
                     </div>
                     <div class="col-12 section-content">
                         <p>No offers available yet.</p>
+                        <script
+                            src="https://cdn.bannerflow.com/bf-placements/58ea322f1239fe39247829bf?targetwindow=_blank&targeturl=http://record.betsson.com/_d9u4s1CmJp9U3mByeQgB-BDuJ8MXiHVG/1/&media=145127&campaign=1"
+                            async></script>
                         <!-- <div *ngIf="bestBonus">{{bestBonus | json}}</div> -->
                     </div>
                 </div>
