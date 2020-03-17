@@ -70,8 +70,7 @@ export class OneCasinoComponent implements OnInit {
   }
 
   goToTerms(url) {
-    console.log(url);
-    this.casinosService.getCasinoTerms(url).subscribe();
+    window.open(url, '_blank');
   }
 
 }
