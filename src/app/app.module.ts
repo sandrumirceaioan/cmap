@@ -3,6 +3,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IconsModule, ButtonsModule, WavesModule, CollapseModule } from 'angular-bootstrap-md';
+import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsent';
+
+const cookieConfig: NgcCookieConsentConfig = {
+  cookie: {
+    domain: 'localhost' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+  },
+  palette: {
+    popup: {
+      background: '#000'
+    },
+    button: {
+      background: '#d8a124'
+    }
+  },
+  theme: 'edgeless',
+  type: "info",
+  content: {
+    "message": "This website uses cookies to ensure you get the best experience on our website.",
+    "dismiss": "Got it!",
+    "deny": "Refuse cookies",
+    "link": "Learn more",
+    "href": "https://cookiesandyou.com",
+    "policy": "Cookie Policy"
+  }
+};
 
 import { EscapeHtmlPipe } from './shared/pipes/keepHtml.pipe';
 
@@ -33,8 +58,8 @@ import { TermsComponent } from './terms/terms.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    IconsModule, ButtonsModule, WavesModule, CollapseModule
-    
+    IconsModule, ButtonsModule, WavesModule, CollapseModule,
+    NgcCookieConsentModule.forRoot(cookieConfig)
   ],
   providers: [
     HomeResolve,
