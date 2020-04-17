@@ -26,7 +26,7 @@ export class NavigationComponent implements OnInit {
     {
       "title": "Casinos", "link": "#",
       "subItems": [
-        { "title": "All Casinos", "link": "#" },
+        { "title": "All Casinos", "link": "/casinos/all" },
         { "title": "New Casinos", "link": "#" },
         { "title": "Best Casinos", "link": "#" }
       ]

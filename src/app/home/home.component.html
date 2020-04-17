@@ -23,9 +23,9 @@
                     <h2>
                         <mdb-icon fas icon="crown" class="icon-green"></mdb-icon> New Casinos
                     </h2>
-                    <button mdbBtn type="button" class="float-right btn-sm btn-flat" outline="true" mdbWavesEffect>View
+                    <a mdbBtn type="button" class="float-right btn-sm btn-flat" outline="true" mdbWavesEffect [routerLink]="['/casinos/all']">View
                         All
-                        Casinos</button>
+                        Casinos</a>
                 </div>
             </div>
             <div class="row custom-card-group">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="custom-card-body">
-                            <a [routerLink]="['casinos', casino.casinoUrl]" mdbBtn class="btn btn-block text-white gold-gradient-inverse custom-card-button"
+                            <a [routerLink]="['/casinos', casino.casinoUrl]" mdbBtn class="btn btn-block text-white gold-gradient-inverse custom-card-button"
                                 mdbWavesEffect>Review</a>
                         </div>
                     </div>

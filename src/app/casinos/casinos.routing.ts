@@ -6,12 +6,16 @@ import { NewCasinosComponent } from './new/new.component';
 import { BestCasinosComponent } from './best/best.component';
 import { OneCasinoComponent } from './one/one.component';
 import { OneCasinoResolve } from './one/one.resolve';
+import { AllCasinoResolve } from './all/all.resolve';
 
 const routes: Routes = [
             { path: '', redirectTo: 'all' },
             {
                 path: 'all',
                 component: AllCasinosComponent,
+                resolve: {
+                    resolved: AllCasinoResolve
+                }
             },
             {
                 path: 'new',

@@ -31,6 +31,18 @@ export class CasinosService {
             );
     }
 
+    getAllCasinos(): Observable<any> {
+        return this.http.get(
+            this.apiPath + '/casinos/all').pipe(
+                map((result: any) => {
+                    return result;
+                }),
+                catchError((error) => {
+                    return throwError(error.message);
+                })
+            );
+    }
+
     getOneCasino(url): Observable<any> {
         let params = new HttpParams();
         params = params.append('url', url.toString());

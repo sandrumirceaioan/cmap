@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { StarRatingModule } from '@sreyaj/ng-star-rating';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { CasinosComponent } from './casinos.component';
+import { AllCasinoResolve } from './all/all.resolve';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CasinosComponent } from './casinos.component';
     ScrollToModule.forRoot()
   ],
   providers: [
-    OneCasinoResolve
+    OneCasinoResolve,
+    AllCasinoResolve
   ]
 })
 export class CasinosModule { }

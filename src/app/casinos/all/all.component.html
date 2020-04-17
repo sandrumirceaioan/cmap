@@ -1,1 +1,73 @@
-<p>all works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-12 section-title">
+                    <h2>
+                        <mdb-icon fas icon="dice" class="icon-green"></mdb-icon> Online Casinos
+                    </h2>
+                </div>
+            </div>
+            <div class="row custom-card-group">
+                <div class="col-12">
+                    <div class="card custom-card">
+                        <div class="custom-card-body-text">
+                            <p>We are continuously providing reviews and ratings for the most trusted casinos online.
+                                You can find here
+                                the best online casinos, using our advanced filter, which allows searching casinos by
+                                their games,
+                                providers, reviews, ratings, countries, languages, currencies, RTP, platforms, payment
+                                methods or
+                                deposit / withdrawal rules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- <div class="row">
+                <div class="col-12 section-filter">
+                    
+                </div>
+            </div> -->
+            <div class="row custom-card-group">
+                <div class="col-lg-3 col-md-6" *ngFor="let casino of casinos">
+                    <div class="card custom-card">
+                        <div class="custom-card-head">
+                            <h3 class="card-title custom-card-title">{{casino.casinoName}}</h3>
+                        </div>
+                        <div [style.background-color]="casino.casinoLogoBg">
+                            <a [routerLink]="['/casinos', casino.casinoUrl]"><img
+                                    [src]="casinosService.backendPath + casino.casinoLogo" class="custom-card-image"
+                                    alt="casino.casinoName"></a>
+                        </div>
+                        <div class="custom-card-footer">
+                            <div class="row no-gutters">
+                                <div class="col-12 reputation">
+                                    <div class="rating">
+                                        <span class="score">{{casino.casinoScore}}</span>
+                                        <span class="max">/10</span>
+                                    </div>
+                                    <!-- <span class="max">Reputation</span> -->
+                                    <span class="card-text rank">
+                                        <mdb-icon fas icon="medal" class="icon"></mdb-icon>{{casino.casinoReputation}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-card-body">
+                            <a [routerLink]="['/casinos', casino.casinoUrl]" mdbBtn
+                                class="btn btn-block text-white gold-gradient-inverse custom-card-button"
+                                mdbWavesEffect>Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
