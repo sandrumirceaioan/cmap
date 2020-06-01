@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { GlobalService } from './shared/services/global.service';
 import { NgcCookieConsentService, NgcInitializeEvent, NgcStatusChangeEvent, NgcNoCookieLawEvent } from 'ngx-cookieconsent';
 import { Subscription } from 'rxjs';
+import { Gtag } from 'angular-gtag';
 
 @Component({
   selector: 'app-root',
@@ -21,10 +22,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     public ccService: NgcCookieConsentService,
-    public globalService: GlobalService
-  ) { }
+    public globalService: GlobalService,
+    public gtag: Gtag
+  ) {
+    this.gtag.pageview();
+  }
 
   ngOnInit() {
+
     // subscribe to cookieconsent observables to react to main events
     this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(
       () => {
@@ -51,7 +56,7 @@ export class AppComponent implements OnInit {
         // you can use this.ccService.getConfig() to do stuff...
       });
 
-      this.noCookieLawSubscription = this.ccService.noCookieLaw$.subscribe(
+    this.noCookieLawSubscription = this.ccService.noCookieLaw$.subscribe(
       (event: NgcNoCookieLawEvent) => {
         // you can use this.ccService.getConfig() to do stuff...
       });

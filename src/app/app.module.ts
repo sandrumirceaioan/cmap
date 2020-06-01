@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IconsModule, ButtonsModule, WavesModule, CollapseModule } from 'angular-bootstrap-md';
 import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsent';
+import { GtagModule } from 'angular-gtag';
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
@@ -59,7 +60,9 @@ import { TermsComponent } from './terms/terms.component';
     AppRoutingModule,
     HttpClientModule,
     IconsModule, ButtonsModule, WavesModule, CollapseModule,
-    NgcCookieConsentModule.forRoot(cookieConfig)
+    NgcCookieConsentModule.forRoot(cookieConfig),
+    GtagModule.forRoot({ trackingId: 'UA-165920520-1', trackPageviews: true })
+
   ],
   providers: [
     HomeResolve,
