@@ -28,7 +28,6 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@nguniversal/express-engine": "^9.0.1",
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
-    "@sreyaj/ng-star-rating": "^2.0.0",
     "@types/chart.js": "^2.9.14",
     "angular-bootstrap-md": "^9.3.1",
     "angular-gtag": "^1.0.4",
