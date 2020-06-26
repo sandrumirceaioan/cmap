@@ -27,7 +27,7 @@
     "@angular/router": "~9.0.2",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@nguniversal/express-engine": "^9.0.1",
-    "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
+    "@nicky-lenaers/ngx-scroll-to": "^3.0.1",
     "@sreyaj/ng-star-rating": "^2.0.0",
     "@types/chart.js": "^2.9.14",
     "angular-bootstrap-md": "^8.10.0",
