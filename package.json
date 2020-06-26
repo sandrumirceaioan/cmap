@@ -30,7 +30,7 @@
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
     "@sreyaj/ng-star-rating": "^2.0.0",
     "@types/chart.js": "^2.9.14",
-    "angular-bootstrap-md": "^9.3.1",
+    "angular-bootstrap-md": "^8.10.0",
     "angular-gtag": "^1.0.4",
     "animate.css": "^3.7.2",
     "chart.js": "^2.5.0",
